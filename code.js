@@ -29,15 +29,15 @@ function addNote_click() {
 
 function showNotes() {
     let notes = localStorage.getItem('notes');
-    if (notes == null) {
+    if (!notes) {
         notesObj = [];
     }
     else {
         notesObj = JSON.parse(notes);
     }
-    let addNotes = "";
+    let html = "";
     notesObj.forEach(element => {
-        addNotes += `
+        html += `
      <div class="card" id="noteCard" style="width: 18rem;">
         <div class="card-body">
         <h5 class="card-title">${element.title}</h5>
@@ -45,6 +45,10 @@ function showNotes() {
         <button class="btn btn-primary">Delete</button>
       </div>`;
     });
+    let notesDiv = document.getElementById('notesDiv');
+    if(notesObj.length != 0){
+        notesDiv.innerHTML = html;
+    }
 
 }
 
