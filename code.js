@@ -25,6 +25,10 @@ function addNote_click() {
         addTxt.value = "";
         showNotes();
     }
+    else {
+
+        $('#alert-msg').modal();
+    }
 }
 
 function showNotes() {
@@ -46,9 +50,16 @@ function showNotes() {
       </div>`;
     });
     let notesDiv = document.getElementById('notesDiv');
-    if(notesObj.length != 0){
+    if (notesObj.length != 0) {
         notesDiv.innerHTML = html;
     }
 
 }
 
+function deleteNotes(){
+
+
+
+
+    
+}
