@@ -40,26 +40,32 @@ function showNotes() {
         notesObj = JSON.parse(notes);
     }
     let html = "";
-    notesObj.forEach(element => {
+    notesObj.forEach((element, index) => {
         html += `
      <div class="card" id="noteCard" style="width: 18rem;">
         <div class="card-body">
         <h5 class="card-title">${element.title}</h5>
         <p class="card-text">${element.text}</p>
-        <button class="btn btn-primary">Delete</button>
+        <button onclick="deleteNotes(${index})" class="btn btn-primary">Delete</button>
       </div>`;
     });
     let notesDiv = document.getElementById('notesDiv');
-    if (notesObj.length != 0) {
-        notesDiv.innerHTML = html;
+    notesDiv.innerHTML = html;
+
+}
+
+function deleteNotes(index) {
+    let notes = localStorage.getItem('notes');
+    if (!notes) {
+        notesObj = [];
     }
-
+    else {
+        notesObj = JSON.parse(notes);
+    }
+    notesObj.splice(index, 1);
+    localStorage.setItem('notes', JSON.stringify(notesObj));
+    showNotes();
 }
 
-function deleteNotes(){
 
 
-
-
-    
-}
