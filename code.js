@@ -67,5 +67,21 @@ function deleteNotes(index) {
     showNotes();
 }
 
+let search = document.getElementById('searchInput');
+search.addEventListener("input", function () {
+let searchValue = search.value;
+let noteCards = document.getElementsByClassName('noteCard');
+Array.from(noteCards).forEach(function(element){
+let cardTxt = element.getElementsByTagName('p')[0].innerText;
+if(cardTxt.includes(searchValue)){
+    element.display.style = "block";
+}
+else{
+    element.display.style = "none";
+}
+})
 
+    console.log(searchValue);
+
+})
 
