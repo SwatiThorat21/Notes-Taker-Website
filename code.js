@@ -70,8 +70,8 @@ function deleteNotes(index) {
 let search = document.getElementById('searchInput');
 search.addEventListener("input", function () {
 let searchValue = search.value;
-let noteCards = document.getElementsByClassName('noteCard');
-Array.from(noteCards).forEach(function(element){
+let noteCard = document.getElementsByClassName('noteCard');
+Array.from(noteCard).forEach(function(element){
 let cardTxt = element.getElementsByTagName('p')[0].innerText;
 if(cardTxt.includes(searchValue)){
     element.display.style = "block";
@@ -81,7 +81,7 @@ else{
 }
 })
 
-    console.log(searchValue);
+    console.log(cardTxt);
 
 })
 
