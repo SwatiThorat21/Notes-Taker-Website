@@ -31,11 +31,34 @@ background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%); */
   background-color: 	#f1f0f0;
 }
 
-.card{
+.card, #searchInput{
   background-color: 	#f1f0f0;
+  box-shadow: 2px 2px 2px 2px;
 }
 input{
   padding: 7px;
   border: solid 2px rgb(96, 96, 174);
   border-radius: 0.375rem;
+}
+
+.navbar-brand{
+
+  font-size: 45px;
+  margin-left: 700px;
+  text-shadow: 2px 2px 2px;
+
+}
+
+h1{
+  text-shadow: 2px 2px 2px;
+}
+
+#addNote, .btn{
+
+  background-color: rgb(96, 96, 174);
+  height: 40px;
+}
+
+.btn:hover, #addNote:hover{
+  background-color:#5072A7;
 }
