@@ -9,18 +9,19 @@
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
 
 </head>
 
 <body>
-  <nav class="navbar bg-primary">
+  <nav class="navbar">
     <div class="container-fluid">
       <a class="navbar-brand">My Notes</a>
       <form class="d-flex" role="search">
         <input class="form-control me-2" id="searchInput" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button>
+        <!-- <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button> -->
       </form>
     </div>
   </nav>
@@ -31,7 +32,7 @@
       <div class="card-body">
         <input class="title me-2" id="addTitle" type="text" placeholder="Add a note title" style="width: 100%;">
       </div>
-      <textarea class="form-control" id="addTxt" rows="4"></textarea>
+      <textarea class="form-control" id="addTxt" rows="4" placeholder="Write your note here..."></textarea>
       <button class="btn btn-primary" id="addNote">Add note</a>
     </div>
   </div>
