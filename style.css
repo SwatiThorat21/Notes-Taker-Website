@@ -2,16 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 
 }
 
 body {
 
-  /* background-color: #8EC5FC;
-background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); */
+  background-color: #8EC5FC;
+background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
   /* background-image: linear-gradient( 64.3deg,  rgba(254,122,152,0.81) 17.7%, rgba(255,206,134,1) 64.7%, rgba(172,253,163,0.64) 112.1% ); */
-  background-image: linear-gradient(109.6deg, rgb(56, 224, 154) 11.2%, rgba(9, 111, 224, 1) 91.1%);
+  /* background-image: linear-gradient(109.6deg, rgb(56, 224, 154) 11.2%, rgba(9, 111, 224, 1) 91.1%); */
+  /* background-color: #74EBD5;
+background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%); */
+
 }
 
 #noteCard {
@@ -21,4 +24,18 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); */
   display: flex;
   flex-direction: row;
   margin: 25px;
+}
+
+#addTxt{
+
+  background-color: 	#f1f0f0;
+}
+
+.card{
+  background-color: 	#f1f0f0;
+}
+input{
+  padding: 7px;
+  border: solid 2px rgb(96, 96, 174);
+  border-radius: 0.375rem;
 }
