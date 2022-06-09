@@ -47,6 +47,7 @@ function showNotes() {
         <h5 class="card-title">${element.title}</h5>
         <p class="card-text">${element.text}</p>
         <button onclick="deleteNotes(${index})" class="btn btn-primary">Delete</button>
+      </div>
       </div>`;
     });
     let notesDiv = document.getElementById('notesDiv');
