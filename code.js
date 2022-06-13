@@ -28,7 +28,11 @@ function addNote_click() {
     else {
 
         $('#alert-msg').modal();
+    
     }
+    // if(addTitle.value.length<15){
+
+    // }
 }
 
 function showNotes() {
@@ -42,7 +46,7 @@ function showNotes() {
     let html = "";
     notesObj.forEach((element, index) => {
         html += `
-     <div class="card" id="noteCard" style="width: 18rem;">
+     <div class="card displayCard" id="noteCard" style="width: 18rem;">
         <div class="card-body">
         <h5 class="card-title">${element.title}</h5>
         <p class="card-text">${element.text}</p>
@@ -69,20 +73,26 @@ function deleteNotes(index) {
 }
 
 let search = document.getElementById('searchInput');
+
 search.addEventListener("input", function () {
-let searchValue = search.value;
-let noteCard = document.getElementsByClassName('noteCard');
-Array.from(noteCard).forEach(function(element){
-let cardTxt = element.getElementsByTagName('p')[0].innerText;
-if(cardTxt.includes(searchValue)){
-    element.display.style = "block";
-}
-else{
-    element.display.style = "none";
-}
-})
-
-    console.log(cardTxt);
-
+    let searchValue = search.value.toLowerCase();
+    let noteCard = document.getElementsByClassName('displayCard');
+    Array.from(noteCard).forEach(function (element) {
+        let cardTxt = element.getElementsByTagName('p')[0].innerText.toLowerCase();
+        if (cardTxt.includes(searchValue)) {
+            element.style.display = "block";
+        }
+        else {
+            element.style.display = "none";
+        }
+        let cardTtitle = element.getElementsByClassName('card-title')[0].innerText.toLowerCase();
+        if (cardTtitle.includes(searchValue)) {
+            element.style.display = "block";
+        }
+        else {
+            element.style.display = "none";
+        }
+    })
+    // console.log(searchValue)
 })
 
