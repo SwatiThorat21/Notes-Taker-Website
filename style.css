@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
-
 }
 
 body {
@@ -61,4 +60,12 @@ h1{
 
 .btn:hover, #addNote:hover{
   background-color:#5072A7;
+}
+
+@media screen and (max-width:500px){
+  .navbar-brand{
+    font-size: 50%;
+    
+  }
+  
 }
