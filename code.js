@@ -5,6 +5,17 @@ function addNote_click() {
     let addTitle = document.getElementById('addTitle');
     let addTxt = document.getElementById('addTxt');
     // console.log('addNoteBtn');
+    if (addTitle.value.length < 5) {
+        alert('Please enter max 5 characters');
+
+    }
+    else if (addTitle.value.length > 10) {
+
+        alert('Please enter mim 10 characters');
+    }
+
+
+
     if (addTitle.value && addTxt.value) {
         let notes = localStorage.getItem('notes');
         let notesObj = [];
@@ -28,12 +39,12 @@ function addNote_click() {
     else {
 
         $('#alert-msg').modal();
-    
     }
-    // if(addTitle.value.length<15){
 
-    // }
+
 }
+
+
 
 function showNotes() {
     let notes = localStorage.getItem('notes');
@@ -79,20 +90,15 @@ search.addEventListener("input", function () {
     let noteCard = document.getElementsByClassName('displayCard');
     Array.from(noteCard).forEach(function (element) {
         let cardTxt = element.getElementsByTagName('p')[0].innerText.toLowerCase();
-        if (cardTxt.includes(searchValue)) {
-            element.style.display = "block";
-        }
-        else {
-            element.style.display = "none";
-        }
         let cardTtitle = element.getElementsByClassName('card-title')[0].innerText.toLowerCase();
-        if (cardTtitle.includes(searchValue)) {
+        if (cardTxt.includes(searchValue) || cardTtitle.includes(searchValue)) {
             element.style.display = "block";
         }
         else {
             element.style.display = "none";
         }
+
     })
-    // console.log(searchValue)
+
 })
 
