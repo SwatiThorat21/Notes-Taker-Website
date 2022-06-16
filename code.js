@@ -5,45 +5,45 @@ function addNote_click() {
     let addTitle = document.getElementById('addTitle');
     let addTxt = document.getElementById('addTxt');
     // console.log('addNoteBtn');
-    if (addTitle.value.length < 5) {
-        alert('Please enter max 5 characters');
 
-    }
-    else if (addTitle.value.length > 10) {
+    if (addTitle.value) {
 
-        alert('Please enter mim 10 characters');
-    }
-
-
-
-    if (addTitle.value && addTxt.value) {
-        let notes = localStorage.getItem('notes');
-        let notesObj = [];
-        if (!notes) {
-            notesObj = [];
-        }
-        else {
-            notesObj = JSON.parse(notes);
-        }
-        let myObj = {
-            title: addTitle.value,
-            text: addTxt.value
+        if (addTitle.value.length < 5 || addTitle.value.length > 15) {
+            $('#alertLength-msg').modal();
+            return;
         }
 
-        notesObj.push(myObj);
-        localStorage.setItem('notes', JSON.stringify(notesObj));
-        addTitle.value = "";
-        addTxt.value = "";
-        showNotes();
-    }
-    else {
+    } else {
 
         $('#alert-msg').modal();
+        return;
     }
 
+    if (!addTxt.value) {
+
+           $('#alert-msg').modal();
+        return;
+    }
+
+    let notes = localStorage.getItem('notes');
+    let notesObj = [];
+    if (!notes) {
+        notesObj = [];
+    }
+    else {
+        notesObj = JSON.parse(notes);
+    }
+    let myObj = {
+        title: addTitle.value,
+        text: addTxt.value
+    }
+    notesObj.push(myObj);
+    localStorage.setItem('notes', JSON.stringify(notesObj));
+    addTitle.value = "";
+    addTxt.value = "";
+    showNotes();
 
 }
-
 
 
 function showNotes() {
