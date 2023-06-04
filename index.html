@@ -11,65 +11,76 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
 <body>
-  <nav class="navbar justify-content-between">
-    <div class="container-fluid">
-      <a class="navbar-brand">Note Taker</a>
-      <form class="searchBar" role="search">
-        <input class="form-control me-2" id="searchInput" type="search" placeholder="Search" aria-label="Search">
-        <!-- <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button> -->
-      </form>
-    </div>
-  </nav>
-
-  <div class="container my-4" style="width: 43%;">
-    <div class="addNoteContainer card">
-      <div class="addNoteContainer card-body">
-        <input class="title me-2" id="addTitle" type="text" placeholder="Add a note title" style="width: 100%;">
-      </div>
-      <textarea class="form-control" id="addTxt" rows="4" placeholder="Write your note here..."></textarea>
-      <button class="btn btn-primary" id="addNote">Add note</a>
-    </div>
-  </div>
-  </div>
-
-  <div class="modal" id="alert-msg" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <p>Please add a Note!</p>
+  <div class="bg_img_wrap">
+    <img class="bg_img" src="bg-1-img.jpg" alt="bg-img">
+    <div class="main_container">
+      <nav class="navbar justify-content-between">
+        <div class="container-fluid">
+          <a class="navbar-brand">Note Taker App</a>
+          <div class="search_container" role="search">
+            <input class="form-control" id="searchInput" class="searchInput" type="search" placeholder="Search"
+              aria-label="Search">
+            <a href="#" class="search-btn">
+              <i class="fas fa-search"></i>
+            </a>
+            <!-- <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button> -->
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </nav>
+
+      <div class="container my-4" style="width: 43%;">
+        <div class="addNoteContainer card">
+          <div class="addNoteContainer card-body">
+            <input class="title me-2" id="addTitle" type="text" placeholder="Add a note title" style="width: 100%;">
+          </div>
+          <textarea class="form-control" id="addTxt" rows="4" placeholder="Write your note here..."></textarea>
+          <button class="btn btn-primary" id="addNote">Add note</a>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="modal" id="alertLength-msg" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <p>Please add a Title Length between 5-10!</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <div class="modal" id="alert-msg" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p>Please add a Note!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
+
+      <div class="modal" id="alertLength-msg" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p>Please add a Title Length between 5-10!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <hr>
+      <h1>Your Notes</h1>
+      </hr>
+      <div id="notesDiv" class="row" class="container-fluid"> </div>
     </div>
   </div>
-
-
-  <hr>
-  <h1>Your Notes</h1>
-  </hr>
-  <div id="notesDiv" class="row" class="container-fluid"> </div>
-
-
 
   <!-- <script src="code.js"></script> -->
   <script src="code.js"></script>

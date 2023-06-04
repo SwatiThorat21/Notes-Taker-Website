@@ -2,17 +2,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
 }
 
 body {
-  background-color: #8ec5fc;
+  /* background-color: #8ec5fc; */
   /* background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); */
-  background: url(bg-img.jpg) no-repeat center center fixed;
+  /* background: url(bg-1-img.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */
+  font-family: "Source Sans Pro", sans-serif;
+}
+.bg_img_wrap{
+  overflow: hidden;
+  position: relative;
+  max-height: 100vh;
+}
+.bg_img{
+  opacity: 0.4;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+.main_container{
+  position: relative;
 }
 
 #noteCard {
@@ -23,12 +39,12 @@ body {
   margin: 25px;
 }
 
-.searchBar {
+/* .search_container {
   width: 300px;
   margin-right: 10px;
-}
+} */
 
-#addTxt{
+#addTxt {
   background-color: #f1f0f0;
 }
 #addTxt:focus {
@@ -39,55 +55,123 @@ body {
 }
 
 .addNoteContainer {
-  border: 1px solid #00000059; 
-outline: none;
+  border: 1px solid #00000059;
+  outline: none;
 }
 
-.card,
+.search_container {
+  background: #fff;
+  height: 40px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.8s;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.search_container:hover > #searchInput {
+  width: 300px;
+}
+.search_container #searchInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.8s;
+}
 #searchInput {
-  background-color: #f1f0f0;
-   box-shadow: 2px 2px 2px 2px;
+  background-color: transparent !important;
+  border: none;
+  outline: none;
+}
+#searchInput:focus {
+  border: none;
+  outline: none;
+}
+.search_container,
+.search-btn .fas {
+  color: #5cbdbb;
+  font-size: 19px;
+}
+
+@keyframes hoverShake {
+  0% {
+    transform: skew(0deg, 0deg);
+  }
+  25% {
+    transform: skew(5deg, 5deg);
+  }
+  75% {
+    transform: skew(-5deg, -5deg);
+  }
+  100% {
+    transform: skew(0deg, 0deg);
+  }
+}
+
+.search-container:hover {
+  animation: hoverShake 0.15s linear 3;
 }
 
 .card {
   border: solid 1px rgb(96, 96, 174);
+  background-color: #fff;
 }
 input {
   padding: 7px;
   border: solid 1px rgb(96, 96, 174);
   border-radius: 0.375rem;
 }
-
-/* input:focus {
-  border: solid 2px rgb(96, 96, 174);
-  outline-offset: 0px;
-  outline: none;
-  */
-/* } */
-
-.navbar-brand {
-  font-size: 45px;
-  margin-left: 700px;
-  text-shadow: 2px 2px 2px;
+h5{
+  font-weight: 600;
 }
 
-h1 {
-  text-shadow: 2px 2px 2px;
+/* input:focus {
+  border: solid 1px black;
+   outline: none;
+} */
+
+.navbar-brand {
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 #addNote,
 .btn {
-  background-color: rgb(96, 96, 174);
+  background-color: rgb(115 115 219);
   height: 40px;
+  transition: background-color 0.6s;
 }
 
 .btn:hover,
 #addNote:hover {
-  background-color: #5072a7;
+  background-color: rgb(115 115 219 0.9);
 }
 
-@media screen and (max-width: 500px) {
-  .navbar-brand {
-    font-size: 50%;
+@media screen and (max-width: 768px) {
+  .container{
+    width: 70%;
+  }
+  .search_container:hover > #searchInput {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+   .search_container:hover > #searchInput {
+    width: 120px;
+  }
+  .navbar-brand{
+    font-size: 2rem;
+  }
+  .row{
+    justify-content: center;
   }
 }
